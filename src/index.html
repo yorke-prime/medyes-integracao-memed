@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    const myKeysValues = window.location.search;
+    const urlParams = new URLSearchParams(myKeysValues);
+    const dados = {};
+    const paciente = {};
+    dados.token = urlParams.get('token');
+
+    paciente.external_id = urlParams.get('external_id');
+    paciente.nome = urlParams.get('nome');
+    paciente.cpf = urlParams.get('cpf');
+    paciente.telefone = urlParams.get('telefone');
+
+    const addE = (e) => document.head.appendChild(e);
+    function addScript( callback ) {
+        let script = document.createElement('script');
+        script.src = "https://integrations.memed.com.br/modulos/plataforma.sinapse-prescricao/build/sinapse-prescricao.min.js";
+        script.setAttribute('data-token', dados.token)
+        console.log(script);
+        script.onload=callback;
+        document.head.appendChild( script );
+    }
+    const addScript2 = (e) => {
+        let script = document.createElement('script');
+        script.src = './script.js';
+        script.type = 'text/javascript';
+        console.log(script);
+        addE(script);
+    };
+
+    addScript(addScript2);
+</script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <div class="circle"></div>
+        <p class="text">Carregando a Memed...</p>
+    </div>
+</body>
+<!-- <script
+type="text/javascript"
+src="https://integrations.memed.com.br/modulos/plataforma.sinapse-prescricao/build/sinapse-prescricao.min.js"
+data-token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.WzM4NzM3LCJkMjBkYTZkMDY2MGM5M2UyMmY4OWRhM2JmYzBlOGRmZiIsIjIwMjItMDItMDgiLCJzaW5hcHNlLnByZXNjcmljYW8iLCJwYXJ0bmVyLjMuMzQwNTUiXQ.ZN1m-XLWdX4vgEPhTUPhRHAwKXq6tyjs_rGyH7RswMo">
+</script> -->
+<!-- <script type="text/javascript" src="./script.js"></script> -->
+</html>
