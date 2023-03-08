@@ -18,15 +18,15 @@
         script.type = 'text/javascript';
         script.src = "https://integrations.memed.com.br/modulos/plataforma.sinapse-prescricao/build/sinapse-prescricao.min.js";
         script.setAttribute('data-token', dados.token)
-        console.log(script);
-        script.onload=callback;
+        console.log('Script: ', script);
         document.head.appendChild( script );
+        script.onload=callback;
     }
     const addScript2 = (e) => {
         let script = document.createElement('script');
         script.src = './script.js';
         script.type = 'text/javascript';
-        console.log(script);
+        console.log('Script2: ', script);
         addE(script);
     };
 

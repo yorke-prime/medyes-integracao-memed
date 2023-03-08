@@ -1,4 +1,4 @@
-console.log(MdSinapsePrescricao);
+console.log('Modulo: ', MdSinapsePrescricao);
 MdSinapsePrescricao.event.add('core:moduleInit', (module) => {
   console.log('NAME: ', module.name);
   document.getElementById('status').innerHTML=`Status: ${module.name}`
@@ -50,7 +50,7 @@ MdSinapsePrescricao.event.add('core:moduleInit', (module) => {
       });
                   
       MdHub.event.add('prescricaoImpressa', function(prescriptionData) {
-        console.log(prescriptionData)
+        console.log('aa', prescriptionData)
       });
     })
     document.getElementById('caixa').appendChild(button)
