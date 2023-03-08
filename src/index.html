@@ -15,6 +15,7 @@
     const addE = (e) => document.head.appendChild(e);
     function addScript( callback ) {
         let script = document.createElement('script');
+        script.type = 'text/javascript';
         script.src = "https://integrations.memed.com.br/modulos/plataforma.sinapse-prescricao/build/sinapse-prescricao.min.js";
         script.setAttribute('data-token', dados.token)
         console.log(script);
@@ -40,10 +41,20 @@
 </head>
 <body>
     <div class="box">
+        <p id="status">Status: Pré carregamento </p>
         <div class="circle"></div>
-        <p class="text">Carregando a Memed...</p>
+        <div class="tent">
+            <p class="text">Carregando a Memed...</p>
+            <button onclick="atualizar()" class="refresh">Atualizar</button>
+        </div>
     </div>
 </body>
+<script>
+    function atualizar() {
+      console.log('atualizar');
+      window.location.reload();
+    }
+</script>
 <!-- <script
 type="text/javascript"
 src="https://integrations.memed.com.br/modulos/plataforma.sinapse-prescricao/build/sinapse-prescricao.min.js"
