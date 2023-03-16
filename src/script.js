@@ -1,9 +1,9 @@
 console.log('Modulo: ', MdSinapsePrescricao);
 MdSinapsePrescricao.event.add('core:moduleInit', (module) => {
   console.log('NAME: ', module.name);
-  document.getElementById('status').innerHTML=`Status: ${module.name}`
+  document.getElementById('status').innerHTML=`Carregando: ${module.name}`
   if (module.name === 'plataforma.prescricao') {
-    document.getElementById('status').innerHTML="Status: Iniciado"
+    document.getElementById('status').innerHTML="Carregando: Iniciado"
     MdHub.command.send('plataforma.prescricao', 'setFeatureToggle', {
       deletePatient: true,
       removePatient: true,
@@ -18,7 +18,7 @@ MdSinapsePrescricao.event.add('core:moduleInit', (module) => {
       cpf: paciente.cpf || '',
       telefone: paciente.cpf || '',
     }).then(function() {
-      document.getElementById('status').innerHTML="Status: Paciente enviado"
+      document.getElementById('status').innerHTML="Carregando: Paciente enviado"
       MdHub.module.show('plataforma.prescricao');
     });
                 
@@ -30,7 +30,7 @@ MdSinapsePrescricao.event.add('core:moduleInit', (module) => {
     button.innerHTML="Abrir a Memed"
     button.classList.add('refresh')
     button.addEventListener('click', () => {
-      document.getElementById('status').innerHTML="Status: Iniciado"
+      document.getElementById('status').innerHTML="Carregando: Iniciado"
       MdHub.command.send('plataforma.prescricao', 'setFeatureToggle', {
         deletePatient: true,
         removePatient: true,
@@ -45,7 +45,7 @@ MdSinapsePrescricao.event.add('core:moduleInit', (module) => {
         cpf: paciente.cpf || '',
         telefone: paciente.cpf || '',
       }).then(function() {
-        document.getElementById('status').innerHTML="Status: Paciente enviado"
+        document.getElementById('status').innerHTML="Carregando: Paciente enviado"
         MdHub.module.show('plataforma.prescricao');
       });
                   
