@@ -1,13 +1,12 @@
-console.log('Modulo: ', MdSinapsePrescricao);
 MdSinapsePrescricao.event.add('core:moduleInit', (module) => {
   console.log('NAME: ', module.name);
   document.getElementById('status').innerHTML=`Carregando: ${module.name}`
   if (module.name === 'plataforma.prescricao') {
     document.getElementById('status').innerHTML="Carregando: Iniciado"
     MdHub.command.send('plataforma.prescricao', 'setFeatureToggle', {
-      deletePatient: true,
-      removePatient: true,
-      editPatient: true,
+      deletePatient: false,
+      removePatient: false,
+      editPatient: false,
       buttonClose: true,
     });
     
@@ -32,9 +31,9 @@ MdSinapsePrescricao.event.add('core:moduleInit', (module) => {
     button.addEventListener('click', () => {
       document.getElementById('status').innerHTML="Carregando: Iniciado"
       MdHub.command.send('plataforma.prescricao', 'setFeatureToggle', {
-        deletePatient: true,
-        removePatient: true,
-        editPatient: true,
+        deletePatient: false,
+        removePatient: false,
+        editPatient: false,
         buttonClose: true,
       });
       
