@@ -1,5 +1,4 @@
 MdSinapsePrescricao.event.add('core:moduleInit', (module) => {
-  console.log('NAME: ', module.name);
   document.getElementById('status').innerHTML=`Carregando: ${module.name}`
   if (module.name === 'plataforma.prescricao') {
     document.getElementById('status').innerHTML="Carregando: Iniciado"
@@ -21,9 +20,7 @@ MdSinapsePrescricao.event.add('core:moduleInit', (module) => {
       MdHub.module.show('plataforma.prescricao');
     });
                 
-    MdHub.event.add('prescricaoImpressa', function(prescriptionData) {
-      console.log(prescriptionData)
-    });
+    MdHub.event.add('prescricaoImpressa', function(prescriptionData) {});
   } else if (module.name === 'platform.digital-signature') {
     const button = document.createElement('button');
     button.innerHTML="Abrir a Memed"
@@ -48,9 +45,7 @@ MdSinapsePrescricao.event.add('core:moduleInit', (module) => {
         MdHub.module.show('plataforma.prescricao');
       });
                   
-      MdHub.event.add('prescricaoImpressa', function(prescriptionData) {
-        console.log('aa', prescriptionData)
-      });
+      MdHub.event.add('prescricaoImpressa', function(prescriptionData) {});
     })
     document.getElementById('caixa').appendChild(button)
     }

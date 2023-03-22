@@ -16,9 +16,8 @@
     function addScript( callback ) {
         let script = document.createElement('script');
         script.type = 'text/javascript';
-        script.src = "https://integrations.memed.com.br/modulos/plataforma.sinapse-prescricao/build/sinapse-prescricao.min.js";
+        script.src = "https://memed.com.br/modulos/plataforma.sinapse-prescricao/build/sinapse-prescricao.min.js";
         script.setAttribute('data-token', dados.token)
-        console.log('Script: ', script);
         document.head.appendChild( script );
         script.onload=callback;
     }
@@ -26,7 +25,6 @@
         let script = document.createElement('script');
         script.src = './script.js';
         script.type = 'text/javascript';
-        console.log('Script2: ', script);
         addE(script);
     };
 
@@ -41,8 +39,7 @@
 </head>
 <body>
     <div class="box">
-
-        <div>
+        <div class="boxLoader">
             <span class="loader"></span>
         </div>
         <div class="tent" id="caixa">
@@ -53,14 +50,7 @@
 </body>
 <script>
     function atualizar() {
-      console.log('atualizar');
       window.location.reload();
     }
 </script>
-<!-- <script
-type="text/javascript"
-src="https://integrations.memed.com.br/modulos/plataforma.sinapse-prescricao/build/sinapse-prescricao.min.js"
-data-token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.WzM4NzM3LCJkMjBkYTZkMDY2MGM5M2UyMmY4OWRhM2JmYzBlOGRmZiIsIjIwMjItMDItMDgiLCJzaW5hcHNlLnByZXNjcmljYW8iLCJwYXJ0bmVyLjMuMzQwNTUiXQ.ZN1m-XLWdX4vgEPhTUPhRHAwKXq6tyjs_rGyH7RswMo">
-</script> -->
-<!-- <script type="text/javascript" src="./script.js"></script> -->
 </html>
